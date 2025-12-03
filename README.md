@@ -1,0 +1,55 @@
+# 🌿 MythWear Commons  
+**Wearable movement medicine for the Commons.**  
+An open, steadily evolving collection of patterns, circuits, and story-rooted designs that help people feel more alive in their bodies.
+
+MythWear is part of the Flower Road ecosystem — a space where movement, somatics, and story meet open hardware. Every pattern here is offered as a seed: adaptable, remixable, and shaped by the people who wear it.
+
+---
+
+## ✨ What Is MythWear?
+MythWear explores:
+- **movement-responsive clothing** (hoods, wraps, belts, braids)  
+- **open hardware patterns** (Leaf Circuit, Mudhead Band, StarBone Conductor)  
+- **low-cost, community-buildable prototypes**  
+- **textiles as sanctuary** — warmth, grounding, presence  
+- **mythic and cultural motifs**, carried with care  
+
+This is not a brand.  
+It is a **Commons** — a shared creative space for anyone who wishes to build tools that help humans breathe easier, move freely, and return to themselves.
+
+---
+
+## 📂 Structure
+- `/patterns` — sewing & construction patterns (PDF/SVG/JPEG/Markdown)  
+- `/prototypes` — early-stage concepts, material lists, revisions  
+- `/mythology` — the story threads that shape the designs  
+- `/open-hardware` — circuits, sensors, and low-cost modules  
+- `/docs` — how-to guides, build notes, photo walk-throughs  
+
+---
+
+## 🧵 Philosophy
+MythWear is built around three commitments:
+
+1. **Movement First**  
+   Clothing should amplify freedom and embodiment, not restrict it.
+
+2. **Commons Over Commodity**  
+   Designs are shared, remixable, and collectively improved.
+
+3. **Myth Matters**  
+   Every pattern carries a story. Every stitch is a way of remembering.
+
+---
+
+## 📜 License
+All materials are offered under **CC BY-NC-SA 4.0**  
++ the **Stewardship Clause**:  
+You may adapt, remix, and teach from this work, but not in ways that exploit people or harm the Commons.
+
+---
+
+## 🌱 Invitation
+If you build something from these patterns — even a tiny prototype — consider adding your notes, variations, and discoveries. The Commons grows because people like you add light to it.
+
+**More coming soon.**
