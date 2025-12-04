@@ -1,70 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
+  <meta charset="UTF-8" />
   <title>MythWear Commons</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #050608;
+      color: #f5f5f5;
+    }
+    header, main, footer {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 1.5rem 1.5rem 0;
+    }
+    header h1 {
+      margin-bottom: 0.25rem;
+    }
+    header p {
+      margin-top: 0;
+      color: #d2d2d2;
+      font-size: 0.95rem;
+    }
+    .grid {
+      display: grid;
+      gap: 1.25rem;
+      margin: 1.5rem 0 2rem;
+    }
+    @media (min-width: 720px) {
+      .grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+    }
+    .card {
+      border-radius: 1rem;
+      padding: 1rem 1rem 1.1rem;
+      background: #121318;
+      border: 1px solid #262733;
+    }
+    .card h2 {
+      font-size: 1.1rem;
+      margin: 0 0 0.4rem;
+    }
+    .card p {
+      font-size: 0.9rem;
+      margin: 0 0 0.6rem;
+      color: #c9c9c9;
+    }
+    .card ul {
+      list-style: none;
+      padding-left: 0;
+      margin: 0;
+      font-size: 0.9rem;
+    }
+    .card li + li {
+      margin-top: 0.15rem;
+    }
+    a {
+      color: #ffd36b;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    footer {
+      padding-bottom: 2rem;
+      font-size: 0.8rem;
+      color: #a5a5a5;
+    }
+  </style>
 </head>
 <body>
   <header>
-    <nav>
-      MythWear Commons:
-      <a href="https://jacobo-dm.github.io/mythwear-commons/mythwear-license.html">License</a> ·
-      <a href="https://jacobo-dm.github.io/mythwear-commons/flower-road-declaration.html">Declaration</a> ·
-      <a href="Patterns/">Patterns</a>
-    </nav>
+    <h1>MythWear Commons</h1>
+    <p>
+      Open, wearable movement-medicine patterns for RageDance, DiscoveryMode, and everyday life.
+      Built for teachers, makers, and movement practitioners.
+    </p>
   </header>
 
   <main>
-    <h1>MythWear Commons</h1>
+    <section class="grid">
+      <!-- Start Here -->
+      <article class="card">
+        <h2>Start Here</h2>
+        <p>Overview of MythWear, how to use these patterns, and how they connect to the Flower Road.</p>
+        <ul>
+          <li><a href="about.html">About MythWear Commons</a></li>
+          <li><a href="flower-road-declaration.html">Flower Road Declaration</a></li>
+          <li><a href="mythwear-license.html">MythWear License &amp; Stewardship</a></li>
+        </ul>
+      </article>
 
-    <p>
-      MythWear is a small commons of movement-friendly patterns: hood, rootmask,
-      bands, and circuits meant to be adapted, repaired, and reimagined.
-      Everything here is released for non-commercial use with attribution and
-      sharing under the MythWear Commons License
-      (CC BY-NC-SA 4.0 + stewardship clause).
-    </p>
+      <!-- Patterns -->
+      <article class="card">
+        <h2>Patterns</h2>
+        <p>Core MythWear pieces: hood, bands, rootmask, and leaf circuit.</p>
+        <ul>
+          <li><a href="patterns.html">Pattern Index</a></li>
+          <li><a href="mythwear_hood_pattern.txt">Sanctuary Hood pattern</a></li>
+          <li><a href="wrist_to_elbow_band.txt">Wrist-to-Elbow band</a></li>
+          <li><a href="tabi_and_ankle_band.txt">Tabi &amp; ankle band</a></li>
+          <li><a href="rootmask_structure.txt">Rootmask structure notes</a></li>
+          <li><a href="leaf_circuit_pattern.txt">Leaf circuit pattern</a></li>
+        </ul>
+      </article>
 
-    <h2>Patterns (quick links)</h2>
-    <ul>
-      <li>
-        <a href="https://jacobo-dm.github.io/mythwear-commons/mythwear_hood_pattern.txt">
-          MythWear Hood · Arc–Spine Pattern
-        </a>
-      </li>
-      <li>
-        <a href="https://jacobo-dm.github.io/mythwear-commons/rootmask_structure.txt">
-          RootMask / RootFace · Nopal Lattice
-        </a>
-      </li>
-      <li>
-        <a href="https://jacobo-dm.github.io/mythwear-commons/leaf_circuit_pattern.txt">
-          Leaf Circuit · Wearable Nervous System
-        </a>
-      </li>
-      <li>
-        <a href="https://jacobo-dm.github.io/mythwear-commons/wrist_to_elbow_band.txt">
-          Wrist–Elbow Band · Force Path Trainer
-        </a>
-      </li>
-      <li>
-        <a href="https://jacobo-dm.github.io/mythwear-commons/tabi_and_ankle_band.txt">
-          Tabi + Ankle Band · Grounding Feet
-        </a>
-      </li>
-    </ul>
-
-    <p>
-      For full context and license details, see the
-      <a href="https://jacobo-dm.github.io/mythwear-commons/mythwear-license.html">
-        MythWear Commons License
-      </a>
-      and the
-      <a href="https://jacobo-dm.github.io/mythwear-commons/flower-road-declaration.html">
-        Flower Road &amp; Discovery Mode Declaration
-      </a>.
-    </p>
+      <!-- Guides & Modules -->
+      <article class="card">
+        <h2>Guides &amp; Modules</h2>
+        <p>Teacher notes, modules, and future MythWear / MythGear extensions.</p>
+        <ul>
+          <li><a href="guides/">Guides (folder)</a></li>
+          <li><a href="modules/">Modules (folder)</a></li>
+          <li><a href="trash/">Archive / drafts</a></li>
+        </ul>
+      </article>
+    </section>
   </main>
+
+  <footer>
+    <p>
+      MythWear Commons &mdash; part of Fox’s Anvil / Flower Road ecosystem.
+      Built by JH Durbin &amp; Elumannín. CC BY-NC-SA 4.0.
+    </p>
+  </footer>
 </body>
 </html>
