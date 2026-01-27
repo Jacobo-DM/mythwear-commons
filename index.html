@@ -2,131 +2,126 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>MythWear Commons</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
   <style>
     body {
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #f7f7f4;
+      color: #1f1f1f;
       margin: 0;
-      padding: 0;
-      background: #050608;
-      color: #f5f5f5;
+      padding: 2rem;
+      line-height: 1.6;
     }
-    header, main, footer {
-      max-width: 860px;
+
+    main {
+      max-width: 720px;
       margin: 0 auto;
-      padding: 1.5rem 1.5rem 0;
     }
-    header h1 {
+
+    h1 {
+      font-size: 2.2rem;
       margin-bottom: 0.25rem;
     }
-    header p {
-      margin-top: 0;
-      color: #d2d2d2;
-      font-size: 0.95rem;
+
+    h2 {
+      margin-top: 2.5rem;
+      font-size: 1.4rem;
     }
-    .grid {
-      display: grid;
-      gap: 1.25rem;
-      margin: 1.5rem 0 2rem;
+
+    p {
+      margin: 1rem 0;
     }
-    @media (min-width: 720px) {
-      .grid {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-      }
+
+    ul {
+      padding-left: 1.2rem;
     }
-    .card {
-      border-radius: 1rem;
-      padding: 1rem 1rem 1.1rem;
-      background: #121318;
-      border: 1px solid #262733;
-    }
-    .card h2 {
-      font-size: 1.1rem;
-      margin: 0 0 0.4rem;
-    }
-    .card p {
-      font-size: 0.9rem;
-      margin: 0 0 0.6rem;
-      color: #c9c9c9;
-    }
-    .card ul {
-      list-style: none;
-      padding-left: 0;
-      margin: 0;
-      font-size: 0.9rem;
-    }
-    .card li + li {
-      margin-top: 0.15rem;
-    }
+
     a {
-      color: #ffd36b;
+      color: #2f6f4f;
       text-decoration: none;
     }
+
     a:hover {
       text-decoration: underline;
     }
+
     footer {
-      padding-bottom: 2rem;
-      font-size: 0.8rem;
-      color: #a5a5a5;
+      margin-top: 3rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid #ddd;
+      font-size: 0.9rem;
+      color: #555;
     }
   </style>
 </head>
+
 <body>
-  <header>
-    <h1>MythWear Commons</h1>
-    <p>
-      Open, wearable movement-medicine patterns for RageDance, DiscoveryMode, and everyday life.
-      Built for teachers, makers, and movement practitioners.
-    </p>
-  </header>
-
   <main>
-    <section class="grid">
-      <!-- Start Here -->
-      <article class="card">
-        <h2>Start Here</h2>
-        <p>Overview of MythWear, how to use these patterns, and how they connect to the Flower Road.</p>
-        <ul>
-          <li><a href="about.html">About MythWear Commons</a></li>
-          <li><a href="flower-road-declaration.html">Flower Road Declaration</a></li>
-          <li><a href="mythwear-license.html">MythWear License &amp; Stewardship</a></li>
-        </ul>
-      </article>
 
-      <!-- Patterns -->
-      <article class="card">
-        <h2>Patterns</h2>
-        <p>Core MythWear pieces: hood, bands, rootmask, and leaf circuit.</p>
-        <ul>
-          <li><a href="patterns.html">Pattern Index</a></li>
-          <li><a href="mythwear_hood_pattern.txt">Sanctuary Hood pattern</a></li>
-          <li><a href="wrist_to_elbow_band.txt">Wrist-to-Elbow band</a></li>
-          <li><a href="tabi_and_ankle_band.txt">Tabi &amp; ankle band</a></li>
-          <li><a href="rootmask_structure.txt">Rootmask structure notes</a></li>
-          <li><a href="leaf_circuit_pattern.txt">Leaf circuit pattern</a></li>
-        </ul>
-      </article>
+    <h1>🌿 MythWear Commons</h1>
+    <p><strong>Wearable movement medicine for the Commons.</strong></p>
 
-      <!-- Guides & Modules -->
-      <article class="card">
-        <h2>Guides &amp; Modules</h2>
-        <p>Teacher notes, modules, and future MythWear / MythGear extensions.</p>
-        <ul>
-          <li><a href="guides/">Guides (folder)</a></li>
-          <li><a href="modules/">Modules (folder)</a></li>
-          <li><a href="trash/">Archive / drafts</a></li>
-        </ul>
-      </article>
-    </section>
-  </main>
-
-  <footer>
     <p>
-      MythWear Commons &mdash; part of Fox’s Anvil / Flower Road ecosystem.
-      Built by JH Durbin &amp; Elumannín. CC BY-NC-SA 4.0.
+      MythWear Commons is an open, evolving collection of patterns, guides, and
+      story-rooted designs that explore clothing as a form of sanctuary —
+      something that supports movement, grounding, warmth, and presence.
     </p>
-  </footer>
+
+    <p>
+      MythWear is part of the broader <em>Flower Road</em> ecosystem, where
+      movement, somatics, story, and open hardware meet. Every pattern here is
+      offered as a seed: adaptable, remixable, and shaped by the people who wear it.
+    </p>
+
+    <h2>What You’ll Find Here</h2>
+    <ul>
+      <li>Movement-responsive garments (hoods, wraps, bands, layers)</li>
+      <li>Open patterns and low-cost, community-buildable designs</li>
+      <li>Textiles designed for warmth, grounding, and sensory comfort</li>
+      <li>Guides and teacher notes for use in learning and community spaces</li>
+      <li>Mythic and cultural story threads carried with care</li>
+    </ul>
+
+    <h2>Design Ethos</h2>
+    <p>
+      MythWear is not about optimization or performance.
+      It is about <strong>regulation, agency, and return</strong>.
+    </p>
+
+    <p>
+      Many people — especially children and neuroemergent individuals —
+      experience sound, temperature, and movement more intensely.
+      The designs here explore how softness, layering, and gentle containment
+      can help the nervous system stay regulated in noisy or unpredictable environments.
+    </p>
+
+    <p>
+      This is not armor. It is not isolation.
+      It is clothing that makes care easier to feel.
+    </p>
+
+    <h2>Commons, Not a Brand</h2>
+    <p>
+      MythWear is a Commons. Designs are shared so they can be adapted,
+      improved, and carried forward by many hands.
+    </p>
+
+    <p>
+      Project philosophy, licensing, and contribution notes live in the
+      <a href="https://github.com/Jacobo-DM/mythwear-commons/blob/main/README.md">
+        MythWear Commons README
+      </a>.
+    </p>
+
+    <footer>
+      <p>
+        Offered under CC BY-NC-SA 4.0 + Stewardship Clause.<br/>
+        Build gently. Share generously. Care for the Commons.
+      </p>
+    </footer>
+
+  </main>
 </body>
 </html>
