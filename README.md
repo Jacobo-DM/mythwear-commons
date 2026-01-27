@@ -1,55 +1,127 @@
-# 🌿 MythWear Commons  
-**Wearable movement medicine for the Commons.**  
-An open, steadily evolving collection of patterns, circuits, and story-rooted designs that help people feel more alive in their bodies.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MythWear Commons</title>
 
-MythWear is part of the Flower Road ecosystem — a space where movement, somatics, and story meet open hardware. Every pattern here is offered as a seed: adaptable, remixable, and shaped by the people who wear it.
+  <style>
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #f7f7f4;
+      color: #1f1f1f;
+      margin: 0;
+      padding: 2rem;
+      line-height: 1.6;
+    }
 
----
+    main {
+      max-width: 720px;
+      margin: 0 auto;
+    }
 
-## ✨ What Is MythWear?
-MythWear explores:
-- **movement-responsive clothing** (hoods, wraps, belts, braids)  
-- **open hardware patterns** (Leaf Circuit, Mudhead Band, StarBone Conductor)  
-- **low-cost, community-buildable prototypes**  
-- **textiles as sanctuary** — warmth, grounding, presence  
-- **mythic and cultural motifs**, carried with care  
+    h1 {
+      font-size: 2.2rem;
+      margin-bottom: 0.25rem;
+    }
 
-This is not a brand.  
-It is a **Commons** — a shared creative space for anyone who wishes to build tools that help humans breathe easier, move freely, and return to themselves.
+    h2 {
+      margin-top: 2.5rem;
+      font-size: 1.4rem;
+    }
 
----
+    p {
+      margin: 1rem 0;
+    }
 
-## 📂 Structure
-- `/patterns` — sewing & construction patterns (PDF/SVG/JPEG/Markdown)  
-- `/prototypes` — early-stage concepts, material lists, revisions  
-- `/mythology` — the story threads that shape the designs  
-- `/open-hardware` — circuits, sensors, and low-cost modules  
-- `/docs` — how-to guides, build notes, photo walk-throughs  
+    ul {
+      padding-left: 1.2rem;
+    }
 
----
+    a {
+      color: #2f6f4f;
+      text-decoration: none;
+    }
 
-## 🧵 Philosophy
-MythWear is built around three commitments:
+    a:hover {
+      text-decoration: underline;
+    }
 
-1. **Movement First**  
-   Clothing should amplify freedom and embodiment, not restrict it.
+    footer {
+      margin-top: 3rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid #ddd;
+      font-size: 0.9rem;
+      color: #555;
+    }
+  </style>
+</head>
 
-2. **Commons Over Commodity**  
-   Designs are shared, remixable, and collectively improved.
+<body>
+  <main>
 
-3. **Myth Matters**  
-   Every pattern carries a story. Every stitch is a way of remembering.
+    <h1>🌿 MythWear Commons</h1>
+    <p><strong>Wearable movement medicine for the Commons.</strong></p>
 
----
+    <p>
+      MythWear Commons is an open, evolving collection of patterns, guides, and
+      story-rooted designs that explore clothing as a form of sanctuary —
+      something that supports movement, grounding, warmth, and presence.
+    </p>
 
-## 📜 License
-All materials are offered under **CC BY-NC-SA 4.0**  
-+ the **Stewardship Clause**:  
-You may adapt, remix, and teach from this work, but not in ways that exploit people or harm the Commons.
+    <p>
+      MythWear is part of the broader <em>Flower Road</em> ecosystem, where
+      movement, somatics, story, and open hardware meet. Every pattern here is
+      offered as a seed: adaptable, remixable, and shaped by the people who wear it.
+    </p>
 
----
+    <h2>What You’ll Find Here</h2>
+    <ul>
+      <li>Movement-responsive garments (hoods, wraps, bands, layers)</li>
+      <li>Open patterns and low-cost, community-buildable designs</li>
+      <li>Textiles designed for warmth, grounding, and sensory comfort</li>
+      <li>Guides and teacher notes for use in learning and community spaces</li>
+      <li>Mythic and cultural story threads carried with care</li>
+    </ul>
 
-## 🌱 Invitation
-If you build something from these patterns — even a tiny prototype — consider adding your notes, variations, and discoveries. The Commons grows because people like you add light to it.
+    <h2>Design Ethos</h2>
+    <p>
+      MythWear is not about optimization or performance.
+      It is about <strong>regulation, agency, and return</strong>.
+    </p>
 
-**More coming soon.**
+    <p>
+      Many people — especially children and neuroemergent individuals —
+      experience sound, temperature, and movement more intensely.
+      The designs here explore how softness, layering, and gentle containment
+      can help the nervous system stay regulated in noisy or unpredictable environments.
+    </p>
+
+    <p>
+      This is not armor. It is not isolation.
+      It is clothing that makes care easier to feel.
+    </p>
+
+    <h2>Commons, Not a Brand</h2>
+    <p>
+      MythWear is a Commons. Designs are shared so they can be adapted,
+      improved, and carried forward by many hands.
+    </p>
+
+    <p>
+      Project philosophy, licensing, and contribution notes live in the
+      <a href="https://github.com/Jacobo-DM/mythwear-commons/blob/main/README.md">
+        MythWear Commons README
+      </a>.
+    </p>
+
+    <footer>
+      <p>
+        Offered under CC BY-NC-SA 4.0 + Stewardship Clause.<br/>
+        Build gently. Share generously. Care for the Commons.
+      </p>
+    </footer>
+
+  </main>
+</body>
+</html>
