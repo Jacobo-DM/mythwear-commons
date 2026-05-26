@@ -4,40 +4,201 @@
   <meta charset="UTF-8" />
   <title>MythWear Patterns</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta
+    name="description"
+    content="MythWear Commons pattern index: foundation notes, wearable patterns, structural experiments, and repairable movement tools."
+  />
+
   <style>
-    body { font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-           margin: 0; padding: 1.5rem; background: #050608; color: #f5f5f5; }
-    a { color: #ffd36b; text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    h1 { margin-top: 0; }
-    section { margin-bottom: 1.5rem; }
-    p { max-width: 720px; }
+    :root {
+      --bg: #050608;
+      --panel: #12141c;
+      --line: #2a2e3d;
+      --text: #f5f1e8;
+      --muted: #c9c2b5;
+      --dim: #9d968d;
+      --gold: #ffd36b;
+
+      --sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      --serif: Georgia, "Times New Roman", Times, serif;
+      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background:
+        radial-gradient(circle at top left, rgba(255, 211, 107, 0.08), transparent 32rem),
+        var(--bg);
+      color: var(--text);
+      font-family: var(--sans);
+      line-height: 1.6;
+    }
+
+    main {
+      width: min(100%, 920px);
+      margin: 0 auto;
+      padding: 2rem 1.25rem 3rem;
+    }
+
+    a {
+      color: var(--gold);
+      text-decoration: none;
+      text-underline-offset: 0.18em;
+    }
+
+    a:hover,
+    a:focus {
+      text-decoration: underline;
+    }
+
+    a:focus-visible {
+      outline: 2px solid var(--gold);
+      outline-offset: 4px;
+      border-radius: 0.3rem;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      margin-bottom: 1rem;
+      color: var(--dim);
+      font-family: var(--mono);
+      font-size: 0.75rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0;
+      font-family: var(--serif);
+      font-size: clamp(2.6rem, 8vw, 5rem);
+      line-height: 0.95;
+      letter-spacing: -0.045em;
+    }
+
+    .intro {
+      max-width: 760px;
+      margin: 1.1rem 0 2rem;
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+
+    .section {
+      margin: 1.2rem 0;
+      padding: 1.1rem;
+      border: 1px solid var(--line);
+      border-radius: 1.15rem;
+      background: var(--panel);
+    }
+
+    .section h2 {
+      margin: 0 0 0.4rem;
+      font-family: var(--serif);
+      font-size: 1.55rem;
+      line-height: 1.15;
+    }
+
+    .section p {
+      max-width: 720px;
+      margin: 0 0 0.9rem;
+      color: var(--muted);
+    }
+
+    ul {
+      display: grid;
+      gap: 0.45rem;
+      margin: 0;
+      padding-left: 1.1rem;
+    }
+
+    li {
+      padding-left: 0.1rem;
+    }
+
+    .note {
+      margin: 1.4rem 0;
+      padding: 1rem 1.1rem;
+      border-left: 3px solid var(--gold);
+      border-radius: 0 1rem 1rem 0;
+      background: rgba(255, 211, 107, 0.07);
+      color: var(--muted);
+    }
+
+    .note strong {
+      color: var(--text);
+      font-weight: 700;
+    }
+
+    .back {
+      margin-top: 2rem;
+      color: var(--dim);
+      font-size: 0.95rem;
+    }
   </style>
 </head>
+
 <body>
-  <h1>MythWear Patterns</h1>
-  <p>
-    These are working-commons patterns. Adjust for your body, climate, and movement practice.
-    Please share improvements back into the commons when you can.
-  </p>
+  <main>
+    <div class="eyebrow">MythWear Commons · Pattern Index</div>
 
-  <section>
-    <h2>Core Pieces</h2>
-    <ul>
-      <li><a href="mythwear_hood_pattern.txt">Sanctuary Hood pattern</a></li>
-      <li><a href="wrist_to_elbow_band.txt">Wrist-to-Elbow band</a></li>
-      <li><a href="tabi_and_ankle_band.txt">Tabi &amp; ankle band</a></li>
-    </ul>
-  </section>
+    <h1>MythWear Patterns</h1>
 
-  <section>
-    <h2>Experimental / Structural</h2>
-    <ul>
-      <li><a href="rootmask_structure.txt">Rootmask structure notes</a></li>
-      <li><a href="leaf_circuit_pattern.txt">Leaf circuit pattern</a></li>
-    </ul>
-  </section>
+    <p class="intro">
+      These are working-commons patterns and foundation notes. Adjust for your body,
+      climate, materials, and movement practice. Share improvements back into the commons
+      when you can.
+    </p>
 
-  <p><a href="index.html">&larr; Back to MythWear home</a></p>
+    <section class="section" aria-labelledby="foundation">
+      <h2 id="foundation">Foundation / Design Principles</h2>
+      <p>
+        These pages describe the deeper structure of the work: why the garments exist,
+        how tiers relate to one another, and how movement may become visible, audible,
+        or otherwise perceptible without becoming surveillance.
+      </p>
+      <ul>
+        <li><a href="mythgear-schematic.html">MythGear embodied language schematic</a></li>
+      </ul>
+    </section>
+
+    <section class="section" aria-labelledby="core-pieces">
+      <h2 id="core-pieces">Core Wearable Pieces</h2>
+      <p>
+        Simple, repairable patterns for sanctuary, movement, sensory comfort, and embodied
+        practice. These are Tier 0–1 forms: cloth, ties, warmth, weight, texture, rhythm.
+      </p>
+      <ul>
+        <li><a href="mythwear_hood_pattern.txt">Sanctuary Hood pattern</a></li>
+        <li><a href="wrist_to_elbow_band.txt">Wrist-to-Elbow band</a></li>
+        <li><a href="tabi_and_ankle_band.txt">Tabi &amp; ankle band</a></li>
+      </ul>
+    </section>
+
+    <section class="section" aria-labelledby="structural">
+      <h2 id="structural">Experimental / Structural Notes</h2>
+      <p>
+        Pattern seeds and structural sketches for future MythWear and MythGear development.
+        These may become garments, modules, guides, or teaching objects later.
+      </p>
+      <ul>
+        <li><a href="rootmask_structure.txt">Rootmask structure notes</a></li>
+        <li><a href="leaf_circuit_pattern.txt">Leaf circuit pattern</a></li>
+        <li><a href="modules/beaded_sanctuary.txt">Beaded sanctuary module</a></li>
+      </ul>
+    </section>
+
+    <div class="note">
+      <p>
+        <strong>Tier reminder:</strong> the most resourced form must remain answerable to
+        the least resourced form. A body, a surface, and an answer are enough.
+      </p>
+    </div>
+
+    <p class="back"><a href="index.html">&larr; Back to MythWear home</a></p>
+  </main>
 </body>
 </html>
