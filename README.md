@@ -1,127 +1,169 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>MythWear Commons</title>
+# MythWear Commons
 
-  <style>
-    body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: #f7f7f4;
-      color: #1f1f1f;
-      margin: 0;
-      padding: 2rem;
-      line-height: 1.6;
-    }
+**Wearable movement medicine for the commons.**
 
-    main {
-      max-width: 720px;
-      margin: 0 auto;
-    }
+MythWear Commons is an open, evolving collection of wearable patterns, repair notes, guides, and story-rooted designs. It explores clothing as a form of sanctuary: something that supports movement, grounding, warmth, sensory comfort, and presence.
 
-    h1 {
-      font-size: 2.2rem;
-      margin-bottom: 0.25rem;
-    }
+MythWear belongs to the wider Flower Road / Fox’s Anvil ecosystem, where movement, somatics, story, open hardware, and commons stewardship meet.
 
-    h2 {
-      margin-top: 2.5rem;
-      font-size: 1.4rem;
-    }
+These are not products.  
+These are seeds.
 
-    p {
-      margin: 1rem 0;
-    }
+---
 
-    ul {
-      padding-left: 1.2rem;
-    }
+## What MythWear Holds
 
-    a {
-      color: #2f6f4f;
-      text-decoration: none;
-    }
+MythWear begins with simple, repairable things:
 
-    a:hover {
-      text-decoration: underline;
-    }
+- hoods
+- wraps
+- wrist-to-elbow bands
+- tabi and ankle bands
+- rootmask structures
+- leaf circuits
+- beaded sanctuary modules
+- cloth, bamboo, bells, chalk, seed rattles, shadow, song
 
-    footer {
-      margin-top: 3rem;
-      padding-top: 1.5rem;
-      border-top: 1px solid #ddd;
-      font-size: 0.9rem;
-      color: #555;
-    }
-  </style>
-</head>
+These pieces can be used in classrooms, gardens, workshops, movement circles, sensory reset spaces, and everyday life.
 
-<body>
-  <main>
+The work is meant to remain useful at the lowest-resourced level. A body, a surface, and an answer are enough.
 
-    <h1>🌿 MythWear Commons</h1>
-    <p><strong>Wearable movement medicine for the Commons.</strong></p>
+---
 
-    <p>
-      MythWear Commons is an open, evolving collection of patterns, guides, and
-      story-rooted designs that explore clothing as a form of sanctuary —
-      something that supports movement, grounding, warmth, and presence.
-    </p>
+## MythGear and Embodied Language
 
-    <p>
-      MythWear is part of the broader <em>Flower Road</em> ecosystem, where
-      movement, somatics, story, and open hardware meet. Every pattern here is
-      offered as a seed: adaptable, remixable, and shaped by the people who wear it.
-    </p>
+MythWear also holds the seed of **MythGear**: a functional layer where garments, movement tools, and sensing structures may help the body make its own language perceptible.
 
-    <h2>What You’ll Find Here</h2>
-    <ul>
-      <li>Movement-responsive garments (hoods, wraps, bands, layers)</li>
-      <li>Open patterns and low-cost, community-buildable designs</li>
-      <li>Textiles designed for warmth, grounding, and sensory comfort</li>
-      <li>Guides and teacher notes for use in learning and community spaces</li>
-      <li>Mythic and cultural story threads carried with care</li>
-    </ul>
+The **Embodied Language Schematic** introduces this layer through the idea of a Translation Garment: not a device that interprets the body, scores movement, or extracts data, but a local pattern field that helps make gesture, breath, pause, rhythm, and trace visible or audible.
 
-    <h2>Design Ethos</h2>
-    <p>
-      MythWear is not about optimization or performance.
-      It is about <strong>regulation, agency, and return</strong>.
-    </p>
+The core rule remains:
 
-    <p>
-      Many people — especially children and neuroemergent individuals —
-      experience sound, temperature, and movement more intensely.
-      The designs here explore how softness, layering, and gentle containment
-      can help the nervous system stay regulated in noisy or unpredictable environments.
-    </p>
+> The system does not interpret.  
+> It perceives and makes perceptible.
 
-    <p>
-      This is not armor. It is not isolation.
-      It is clothing that makes care easier to feel.
-    </p>
+The most resourced version must remain answerable to the least resourced version. Tier 4 must still recognize Tier 0.
 
-    <h2>Commons, Not a Brand</h2>
-    <p>
-      MythWear is a Commons. Designs are shared so they can be adapted,
-      improved, and carried forward by many hands.
-    </p>
+- [MythGear Embodied Language Schematic](mythgear-schematic.html)
 
-    <p>
-      Project philosophy, licensing, and contribution notes live in the
-      <a href="https://github.com/Jacobo-DM/mythwear-commons/blob/main/README.md">
-        MythWear Commons README
-      </a>.
-    </p>
+---
 
-    <footer>
-      <p>
-        Offered under CC BY-NC-SA 4.0 + Stewardship Clause.<br/>
-        Build gently. Share generously. Care for the Commons.
-      </p>
-    </footer>
+## Tier Spectrum
 
-  </main>
-</body>
-</html>
+MythWear / MythGear should remain coherent across all levels of access.
+
+| Tier | Form |
+| --- | --- |
+| Tier 0 | A place to stand. Cloth. Shadow. Song. |
+| Tier 1 | Bamboo. Bells. Chalk. Seed rattles. |
+| Tier 2 | Low-cost sensors. LilyPad-style circuits. Local sound. |
+| Tier 3 | Full garment. Joint mapping. Visible trace. |
+| Tier 4 | Local pattern field. Always answerable to Tier 0. |
+
+The purpose is not to climb the tiers.  
+The purpose is to keep the living center intact at every tier.
+
+---
+
+## Design Ethos
+
+MythWear is not about optimization, productivity, surveillance, scoring, or performance.
+
+It is about:
+
+- regulation
+- agency
+- warmth
+- grounding
+- repair
+- felt presence
+- movement as language
+- clothing as care
+- tools that do not dominate the body
+
+Many people, including children and neuroemergent people, experience sound, temperature, texture, and movement intensely. The designs here explore how softness, layering, gentle containment, rhythm, and repairable materials can help the nervous system remain present in noisy or unpredictable environments.
+
+This is not armor.  
+It is not isolation.  
+It is clothing that makes care easier to feel.
+
+---
+
+## Story Envelope
+
+The MythGear schematic introduces BristleWick, a bridge guardian who no longer remembers what his wings are for.
+
+In the watch repair shop, BristleWick does not learn to fly first. First, he learns to feel where his wings are.
+
+This story frame matters because MythWear is not only a technical or textile project. It is also about remembering relation: body to cloth, cloth to motion, motion to language, language to care.
+
+---
+
+## Repository Map
+
+Start here:
+
+- [Public index](index.html)
+- [About MythWear Commons](about.html)
+- [Pattern Index](patterns.html)
+- [Flower Road Declaration](flower-road-declaration.html)
+- [MythWear License & Stewardship](mythwear-license.html)
+- [MythGear Embodied Language Schematic](mythgear-schematic.html)
+
+Core pattern files:
+
+- [Sanctuary Hood pattern](mythwear_hood_pattern.txt)
+- [Wrist-to-Elbow band](wrist_to_elbow_band.txt)
+- [Tabi & ankle band](tabi_and_ankle_band.txt)
+- [Rootmask structure notes](rootmask_structure.txt)
+- [Leaf circuit pattern](leaf_circuit_pattern.txt)
+
+Folders:
+
+- `guides/` — teacher notes and use-context guidance
+- `modules/` — modular pattern experiments
+- `trash/` — archive / drafts / retired material
+
+---
+
+## Commons, Not a Brand
+
+MythWear is a commons offering.
+
+Use what helps.  
+Attribute what you receive.  
+Adapt with care.  
+Return improvements when possible.  
+Do not turn living practice into extractive product.
+
+A pattern is not finished when it is published. It is finished enough to be tested, repaired, taught, and returned.
+
+---
+
+## Dependency Discipline
+
+This repo should remain lightweight and locally legible.
+
+Current rule:
+
+- no Google Fonts
+- no Google Analytics
+- no Google Tag Manager
+- no Google-hosted assets
+- no invisible external dependencies where avoidable
+- no dashboards that extract from the people using the work
+
+A page should not need to ask permission from Google in order to speak.
+
+---
+
+## License and Stewardship
+
+Unless otherwise noted, this work is shared under **CC BY-NC-SA 4.0** with additional stewardship guidance in the MythWear License.
+
+See:
+
+- [MythWear License & Stewardship](mythwear-license.html)
+
+Build gently.  
+Share generously.  
+Care for the commons.
