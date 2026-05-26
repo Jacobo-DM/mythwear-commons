@@ -1,1 +1,492 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="MythGear embodied language schematic: minimum presence, translation garment tiers, and DesertRain receiving surface for MythWear Commons.">
+<meta name="color-scheme" content="light">
+<title>MythGear — Embodied Language Schematic</title>
+<style>
+  :root {
+    --serif: Georgia, "Times New Roman", Times, serif;
+    --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+    --sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    --ink: #1a1612;
+    --parchment: #f5f0e8;
+    --warm-mid: #c8b89a;
+    --accent: #8b4513;
+    --pulse: #d4a853;
+    --ghost: rgba(26,22,18,0.08);
+    --green: #6b7c5e;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  .skip-link {
+    position: absolute;
+    left: 1rem;
+    top: -100px;
+    z-index: 2000;
+    padding: 0.55rem 0.8rem;
+    border: 1px solid var(--ink);
+    border-radius: 999px;
+    background: var(--ink);
+    color: var(--parchment);
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .skip-link:focus { top: 1rem; }
+  a { color: var(--accent); text-underline-offset: 0.18em; }
+  a:hover, a:focus { color: var(--ink); }
+  a:focus-visible,
+  button:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 4px;
+  }
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+  body { background: var(--parchment); color: var(--ink); font-family: var(--serif); min-height: 100vh; overflow-x: hidden; }
+  body::before { content: ''; position: fixed; inset: 0; background-image: radial-gradient(circle at 18% 22%, rgba(26,22,18,0.035) 0 1px, transparent 1.2px), radial-gradient(circle at 78% 64%, rgba(26,22,18,0.025) 0 1px, transparent 1.4px); background-size: 23px 23px, 31px 31px; pointer-events: none; z-index: 1000; opacity: 0.55; }
+  header { padding: 2rem 2rem 0.5rem; text-align: center; border-bottom: 1px solid var(--warm-mid); }
+  .return-link {
+    display: inline-flex;
+    margin-bottom: 1.4rem;
+    font-family: var(--mono);
+    font-size: 0.62rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    opacity: 0.7;
+  }
+  .return-link:hover,
+  .return-link:focus { opacity: 1; }
+  header h1 { font-size: clamp(2rem, 5vw, 3.5rem); font-weight: normal; letter-spacing: 0.2em; text-transform: uppercase; font-family: var(--serif); }
+  .subtitle { font-style: italic; color: var(--accent); margin-top: 0.4rem; font-size: 1rem; letter-spacing: 0.04em; }
+  .sub2 { font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--warm-mid); margin-top: 0.6rem; }
+  .story-envelope { max-width: 560px; margin: 1.6rem auto 0; padding: 1rem 1.5rem; border-left: 2px solid var(--pulse); text-align: left; background: rgba(212,168,83,0.05); }
+  .story-envelope p { font-style: italic; font-size: 0.95rem; line-height: 1.75; opacity: 0.82; margin-bottom: 0.5rem; }
+  .story-envelope p:last-child { margin-bottom: 0; }
+  .story-attr { font-family: var(--mono); font-size: 0.55rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--pulse); margin-top: 0.6rem; opacity: 0.65; }
+  .tabs { display: flex; justify-content: center; margin: 2rem auto 0; max-width: 700px; border: 1px solid var(--warm-mid); }
+  @media (max-width: 560px) { .tabs { flex-direction: column; } .tab { border-right: none; border-bottom: 1px solid var(--warm-mid); } .tab:last-child { border-bottom: none; } }
+  .tab { flex: 1; padding: 0.7rem 0.5rem; background: transparent; border: none; border-right: 1px solid var(--warm-mid); font-family: var(--mono); font-size: 0.58rem; letter-spacing: 0.08em; text-transform: uppercase; cursor: pointer; color: var(--ink); opacity: 0.45; transition: all 0.3s; line-height: 1.5; }
+  .tab:last-child { border-right: none; }
+  .tab.active, .tab[aria-selected="true"] { background: var(--ink); color: var(--parchment); opacity: 1; }
+  .tab:hover:not(.active) { opacity: 0.72; background: var(--ghost); }
+  .panel { display: none; padding: 2rem; max-width: 1100px; margin: 0 auto; animation: fadeIn 0.35s ease; }
+  .panel.active { display: block; }
+  .panel[hidden] { display: none !important; }
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+  .schematic { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: start; }
+  @media (max-width: 680px) { .schematic { grid-template-columns: 1fr; } }
+  svg.body-figure { width: 100%; max-width: 300px; display: block; margin: 0 auto; }
+  .anno-list { padding: 1rem 0; }
+  .anno-list h3 { font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 1.2rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--warm-mid); }
+  .ai { display: flex; align-items: flex-start; gap: 0.75rem; margin-bottom: 1rem; padding: 0.6rem; border-left: 2px solid transparent; transition: all 0.2s; }
+  .ai:hover { border-left-color: var(--pulse); background: var(--ghost); }
+  .dot { width: 9px; height: 9px; border-radius: 50%; flex-shrink: 0; margin-top: 5px; }
+  .lbl { font-family: var(--mono); font-size: 0.6rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent); margin-bottom: 0.25rem; }
+  .dsc { font-size: 0.92rem; font-style: italic; line-height: 1.55; opacity: 0.85; }
+  .mpp { margin: 1.5rem 0; padding: 1rem 1.2rem; border: 1px solid var(--green); background: rgba(107,124,94,0.05); }
+  .mpp-lbl { font-family: var(--mono); font-size: 0.58rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--green); margin-bottom: 0.5rem; }
+  .mpp p { font-style: italic; font-size: 0.95rem; line-height: 1.7; }
+  .tier-strip { margin: 2rem 0 1rem; border: 1px solid var(--warm-mid); padding: 1.2rem; }
+  .tier-strip h3 { font-family: var(--mono); font-size: 0.58rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 1rem; }
+  .tiers { display: flex; }
+  @media (max-width: 720px) { .tiers { flex-direction: column; } .tier { border-right: none; border-bottom: 1px solid var(--warm-mid); } .tier:last-child { border-bottom: none; } }
+  .tier { flex: 1; padding: 0.6rem 0.4rem; text-align: center; border-right: 1px solid var(--warm-mid); }
+  .tier:last-child { border-right: none; }
+  .tier-n { font-family: var(--mono); font-size: 0.52rem; letter-spacing: 0.12em; opacity: 0.5; display: block; margin-bottom: 0.3rem; }
+  .tier-nm { font-size: 0.78rem; font-style: italic; line-height: 1.3; }
+  .tier.hi { background: var(--ink); color: var(--parchment); }
+  .tier.hi .tier-n { opacity: 0.6; }
+  .flow-block { margin: 2rem 0; border: 1px solid var(--warm-mid); padding: 1.4rem; }
+  .flow-block h3 { font-family: var(--mono); font-size: 0.58rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 1.4rem; }
+  .fs { display: flex; gap: 1rem; padding: 0.75rem 0; border-bottom: 1px solid var(--ghost); }
+  .fs:last-child { border-bottom: none; }
+  .fn { font-family: var(--mono); font-size: 0.58rem; color: var(--pulse); flex-shrink: 0; padding-top: 3px; width: 1.4rem; }
+  .ft { font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 0.2rem; }
+  .fd { font-size: 0.9rem; font-style: italic; opacity: 0.82; line-height: 1.55; }
+  .braid-block { margin: 2rem 0; padding: 1.4rem; border: 1px solid var(--warm-mid); }
+  .braid-block h3 { font-family: var(--mono); font-size: 0.58rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 1.2rem; }
+  .bl2 { display: flex; align-items: baseline; gap: 0.8rem; padding: 0.6rem 0; border-bottom: 1px solid var(--ghost); font-style: italic; font-size: 0.95rem; line-height: 1.6; }
+  .bl2:last-child { border-bottom: none; }
+  .btag { font-family: var(--mono); font-size: 0.55rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--pulse); flex-shrink: 0; width: 6rem; }
+  .prot { margin: 1.8rem 0 0; padding: 1.2rem 1.4rem; border-left: 3px solid var(--accent); background: var(--ghost); }
+  .prot p { font-style: italic; font-size: 0.92rem; line-height: 1.85; margin-bottom: 0.3rem; }
+  .prot p:last-child { margin-bottom: 0; opacity: 0.6; }
+  footer { text-align: center; padding: 2.5rem 2rem; border-top: 1px solid var(--warm-mid); margin-top: 2rem; }
+  footer p { font-style: italic; font-size: 1rem; opacity: 0.65; letter-spacing: 0.04em; }
+  .footer-meta {
+    max-width: 760px;
+    margin: 1rem auto 0;
+    font-family: var(--mono);
+    font-size: 0.62rem;
+    line-height: 1.8;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    opacity: 0.55;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      scroll-behavior: auto !important;
+      transition-duration: 0.001ms !important;
+    }
+  }
+  noscript .noscript-note {
+    max-width: 760px;
+    margin: 1rem auto 0;
+    padding: 0.8rem 1rem;
+    border: 1px solid var(--warm-mid);
+    font-family: var(--mono);
+    font-size: 0.62rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  @keyframes sp { 0%,100%{opacity:1} 50%{opacity:0.35} }
+  .sp  { animation: sp 2.2s ease-in-out infinite; }
+  .sp2 { animation: sp 2.2s ease-in-out infinite 0.35s; }
+  .sp3 { animation: sp 2.2s ease-in-out infinite 0.7s; }
+  .sp4 { animation: sp 2.2s ease-in-out infinite 1.05s; }
+  .sp5 { animation: sp 2.2s ease-in-out infinite 1.4s; }
+  .sp6 { animation: sp 2.2s ease-in-out infinite 1.75s; }
+  @keyframes br { 0%,100%{opacity:0.2} 50%{opacity:0.55} }
+  .br { animation: br 4.5s ease-in-out infinite; }
+  @keyframes tg { 0%{stroke-dashoffset:120;opacity:0} 30%{opacity:0.5} 100%{stroke-dashoffset:0;opacity:0.38} }
+  .tg { stroke-dasharray:120; stroke-dashoffset:120; animation: tg 3.5s ease-out infinite 1s; }
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to schematic</a>
+
+<header>
+  <a class="return-link" href="index.html">← Return to MythWear Commons</a>
+  <h1>MythGear</h1>
+  <p class="subtitle">Embodied Language Schematic</p>
+  <p class="sub2">Translation Garment &nbsp;·&nbsp; Minimum Presence &nbsp;·&nbsp; DesertRain Surface</p>
+
+  <div class="story-envelope">
+    <p>In the watch repair shop, BristleWick does not learn to fly first.<br>
+       First, he learns to feel where his wings are.</p>
+    <p>Circles in Motion did not teach BristleWick a new movement.<br>
+       It returned him to the edge of an old one.</p>
+    <p class="story-attr">BristleWick · Circles in Motion · Story envelope</p>
+  </div>
+
+  <div class="tabs" role="tablist" aria-label="MythGear schematic sections">
+    <button class="tab active" type="button" role="tab" id="tab-t01" aria-selected="true" aria-controls="t01" data-panel="t01">Tier 0–1<br>Minimum Presence</button>
+    <button class="tab" type="button" role="tab" id="tab-t24" aria-selected="false" aria-controls="t24" data-panel="t24">Tier 2–4<br>Translation Garment</button>
+    <button class="tab" type="button" role="tab" id="tab-tdr" aria-selected="false" aria-controls="tdr" data-panel="tdr">DesertRain<br>Receiving Surface</button>
+  </div>
+
+  <noscript>
+    <div class="noscript-note">JavaScript is off. The first panel is visible; the full schematic can still be read by opening the source file.</div>
+  </noscript>
+</header>
+
+<main id="main">
+<!-- PANEL 1: TIER 0-1 -->
+<section class="panel active" id="t01" role="tabpanel" aria-labelledby="tab-t01">
+  <div class="schematic">
+    <div>
+      <svg class="body-figure" viewBox="0 0 200 440" fill="none">
+        <line x1="100" y1="0" x2="100" y2="440" stroke="#c8b89a" stroke-width="0.5" stroke-dasharray="4 7" class="br"/>
+        <line x1="0" y1="220" x2="200" y2="220" stroke="#c8b89a" stroke-width="0.4" stroke-dasharray="4 7" class="br"/>
+        <circle cx="100" cy="38" r="28" stroke="#1a1612" stroke-width="1.2" fill="none"/>
+        <line x1="88" y1="64" x2="85" y2="80" stroke="#1a1612" stroke-width="1.2"/>
+        <line x1="112" y1="64" x2="115" y2="80" stroke="#1a1612" stroke-width="1.2"/>
+        <path d="M 60 88 Q 100 82 140 88" stroke="#1a1612" stroke-width="1.2" fill="none"/>
+        <path d="M 68 88 L 72 180 Q 100 190 128 180 L 132 88" stroke="#1a1612" stroke-width="1.2" fill="none"/>
+        <path d="M 72 180 Q 100 195 128 180 L 130 210 Q 100 222 70 210 Z" stroke="#1a1612" stroke-width="1.2" fill="none"/>
+        <path d="M 60 88 L 38 148 L 30 178" stroke="#1a1612" stroke-width="1.2" fill="none"/>
+        <path d="M 140 88 L 162 148 L 170 178" stroke="#1a1612" stroke-width="1.2" fill="none"/>
+        <path d="M 80 210 L 74 310 L 70 380" stroke="#1a1612" stroke-width="1.2" fill="none"/>
+        <path d="M 120 210 L 126 310 L 130 380" stroke="#1a1612" stroke-width="1.2" fill="none"/>
+        <path d="M 70 380 L 58 390" stroke="#1a1612" stroke-width="1.2"/>
+        <path d="M 130 380 L 142 390" stroke="#1a1612" stroke-width="1.2"/>
+        <line x1="100" y1="80" x2="100" y2="210" stroke="#6b7c5e" stroke-width="2.5" stroke-dasharray="7 4" opacity="0.65"/>
+        <text x="104" y="135" font-family="ui-monospace,monospace" font-size="5.5" fill="#6b7c5e" opacity="0.8">spine strip</text>
+        <ellipse cx="100" cy="74" rx="16" ry="4" stroke="#6b7c5e" stroke-width="1.2" fill="none" stroke-dasharray="3 3"/>
+        <text x="118" y="77" font-family="ui-monospace,monospace" font-size="5.5" fill="#6b7c5e">neck</text>
+        <rect x="22" y="174" width="14" height="7" rx="2" stroke="#6b7c5e" stroke-width="1.1" fill="none"/>
+        <text x="4" y="188" font-family="ui-monospace,monospace" font-size="5.5" fill="#6b7c5e">wrist L</text>
+        <rect x="164" y="174" width="14" height="7" rx="2" stroke="#6b7c5e" stroke-width="1.1" fill="none"/>
+        <text x="163" y="188" font-family="ui-monospace,monospace" font-size="5.5" fill="#6b7c5e">wrist R</text>
+        <rect x="62" y="306" width="16" height="8" rx="2" stroke="#6b7c5e" stroke-width="1.1" fill="none"/>
+        <text x="42" y="321" font-family="ui-monospace,monospace" font-size="5.5" fill="#6b7c5e">knee L</text>
+        <rect x="120" y="306" width="16" height="8" rx="2" stroke="#6b7c5e" stroke-width="1.1" fill="none"/>
+        <text x="120" y="321" font-family="ui-monospace,monospace" font-size="5.5" fill="#6b7c5e">knee R</text>
+        <text x="100" y="13" font-family="Georgia,serif" font-size="8.5" fill="#d4a853" text-anchor="middle" font-style="italic">sound enters</text>
+        <path d="M 78 17 Q 100 21 122 17" stroke="#d4a853" stroke-width="0.8" fill="none" opacity="0.55"/>
+        <path d="M 30 178 Q 8 155 20 136 Q 32 118 41 140" stroke="#d4a853" stroke-width="1" fill="none" opacity="0.5" stroke-dasharray="3 4"/>
+        <text x="1" y="133" font-family="Georgia,serif" font-size="7" fill="#d4a853" font-style="italic">gesture</text>
+        <line x1="20" y1="396" x2="180" y2="396" stroke="#1a1612" stroke-width="0.7" stroke-dasharray="2 5" opacity="0.3"/>
+        <text x="100" y="410" font-family="ui-monospace,monospace" font-size="6" fill="#1a1612" text-anchor="middle" opacity="0.3">a place to stand</text>
+      </svg>
+    </div>
+    <div class="anno-list">
+      <h3>Tier 0–1 · No electronics required</h3>
+      <div class="ai"><div class="dot" style="background:#6b7c5e"></div><div><div class="lbl">Spine Strip</div><div class="dsc">Cloth or bamboo along the spine. Marks the body's axis. The cloth itself is the awareness — no sensor needed.</div></div></div>
+      <div class="ai"><div class="dot" style="background:#6b7c5e"></div><div><div class="lbl">Neck Ring — Bamboo Prosthetic</div><div class="dsc">Lightweight collar: fabric, bamboo, or cord. Extends the proprioceptive field of the head. Amplifies awareness of rotation and tilt without any electronics.</div></div></div>
+      <div class="ai"><div class="dot" style="background:#6b7c5e"></div><div><div class="lbl">Wrist Ties</div><div class="dsc">Fabric cuffs. May carry bells, seeds, or weighted beads. At Tier 0, sound is the output. The wrist arc becomes audible. The flower painted in air is heard by the room.</div></div></div>
+      <div class="ai"><div class="dot" style="background:#6b7c5e"></div><div><div class="lbl">Knee Bands</div><div class="dsc">Cloth at the knees. Weighted or textured. The body feels itself moving. A seated person with mobile knees still generates full language.</div></div></div>
+      <div class="ai"><div class="dot" style="background:#d4a853"></div><div><div class="lbl">Sound Output</div><div class="dsc">The garment produces sound — bells, seeds, breath amplified through cloth, a stick against the ground. No screen. No data. The room hears the dance.</div></div></div>
+    </div>
+  </div>
+
+  <div class="mpp">
+    <div class="mpp-lbl">Minimum Presence Principle</div>
+    <p>MythGear must remain fully itself at its least-resourced form.<br>
+    A body. A surface. An answer.<br>
+    A breath is enough. A cheek shift is enough. A hand that can move one finger is enough.</p>
+  </div>
+
+  <div class="tier-strip">
+    <h3>Tier Spectrum — This build occupies Tier 0 and 1</h3>
+    <div class="tiers">
+      <div class="tier hi"><span class="tier-n">TIER 0</span><span class="tier-nm">A place to stand. Cloth. Shadow. Song.</span></div>
+      <div class="tier hi"><span class="tier-n">TIER 1</span><span class="tier-nm">Bamboo. Bells. Chalk. Seed rattles.</span></div>
+      <div class="tier"><span class="tier-n">TIER 2</span><span class="tier-nm">Low-cost sensors. LilyPad. Local sound.</span></div>
+      <div class="tier"><span class="tier-n">TIER 3</span><span class="tier-nm">Full garment. Joint mapping. Visible trace.</span></div>
+      <div class="tier"><span class="tier-n">TIER 4</span><span class="tier-nm">Local pattern field. Answerable to Tier 0.</span></div>
+    </div>
+  </div>
+
+  <div class="prot">
+    <p>The system does not interpret. It perceives and makes perceptible.</p>
+    <p>The trace belongs to the body that made it.</p>
+    <p>MythGear begins wherever a body can answer.</p>
+  </div>
+</section>
+
+<!-- PANEL 2: TIER 2-4 -->
+<section class="panel" id="t24" role="tabpanel" aria-labelledby="tab-t24" hidden>
+  <div class="schematic">
+    <div>
+      <svg class="body-figure" viewBox="0 0 200 440" fill="none">
+        <line x1="100" y1="0" x2="100" y2="440" stroke="#c8b89a" stroke-width="0.4" stroke-dasharray="3 6" opacity="0.4"/>
+        <circle cx="100" cy="220" r="82" stroke="#c8b89a" stroke-width="0.4" fill="none" opacity="0.2" stroke-dasharray="3 9"/>
+        <circle cx="100" cy="220" r="130" stroke="#c8b89a" stroke-width="0.3" fill="none" opacity="0.12" stroke-dasharray="2 12"/>
+        <circle cx="100" cy="38" r="28" stroke="#1a1612" stroke-width="1.2" fill="none"/>
+        <line x1="88" y1="64" x2="85" y2="80" stroke="#1a1612" stroke-width="1.2"/>
+        <line x1="112" y1="64" x2="115" y2="80" stroke="#1a1612" stroke-width="1.2"/>
+        <path d="M 60 88 Q 100 82 140 88" stroke="#1a1612" stroke-width="1.2" fill="none"/>
+        <path d="M 68 88 L 72 180 Q 100 190 128 180 L 132 88" stroke="#1a1612" stroke-width="1.2" fill="none"/>
+        <path d="M 72 180 Q 100 195 128 180 L 130 210 Q 100 222 70 210 Z" stroke="#1a1612" stroke-width="1.2" fill="none"/>
+        <path d="M 60 88 L 38 148 L 30 178" stroke="#1a1612" stroke-width="1.2" fill="none"/>
+        <path d="M 140 88 L 162 148 L 170 178" stroke="#1a1612" stroke-width="1.2" fill="none"/>
+        <path d="M 80 210 L 74 310 L 70 380" stroke="#1a1612" stroke-width="1.2" fill="none"/>
+        <path d="M 120 210 L 126 310 L 130 380" stroke="#1a1612" stroke-width="1.2" fill="none"/>
+        <path d="M 70 380 L 58 390" stroke="#1a1612" stroke-width="1.2"/>
+        <path d="M 130 380 L 142 390" stroke="#1a1612" stroke-width="1.2"/>
+        <path d="M 100 17 L 100 69" stroke="#d4a853" stroke-width="0.5" opacity="0.22" stroke-dasharray="2 3"/>
+        <path d="M 65 90 L 100 74 L 135 90" stroke="#8b4513" stroke-width="0.5" opacity="0.18" stroke-dasharray="2 3"/>
+        <path d="M 38 150 L 100 120 L 162 150" stroke="#8b4513" stroke-width="0.5" opacity="0.18" stroke-dasharray="2 3"/>
+        <path d="M 30 180 L 100 150 L 170 180" stroke="#d4a853" stroke-width="0.5" opacity="0.18" stroke-dasharray="2 3"/>
+        <path d="M 100 197 L 74 310 M 100 197 L 126 310" stroke="#8b4513" stroke-width="0.5" opacity="0.18" stroke-dasharray="2 3"/>
+        <path d="M 74 312 L 70 374 M 126 312 L 130 374" stroke="#6b7c5e" stroke-width="0.5" opacity="0.18" stroke-dasharray="2 3"/>
+        <circle cx="100" cy="12" r="5" fill="#d4a853" class="sp"/>
+        <text x="107" y="16" font-family="ui-monospace,monospace" font-size="5.5" fill="#d4a853">crown</text>
+        <circle cx="100" cy="74" r="5" fill="#8b4513" class="sp2"/>
+        <text x="107" y="78" font-family="ui-monospace,monospace" font-size="5.5" fill="#8b4513">neck</text>
+        <circle cx="60" cy="88" r="5" fill="#8b4513" class="sp3"/>
+        <text x="28" y="86" font-family="ui-monospace,monospace" font-size="5.5" fill="#8b4513">shoulder L</text>
+        <circle cx="140" cy="88" r="5" fill="#8b4513" class="sp3"/>
+        <text x="142" y="86" font-family="ui-monospace,monospace" font-size="5.5" fill="#8b4513">shoulder R</text>
+        <circle cx="100" cy="120" r="5" fill="#d4a853" class="sp4"/>
+        <text x="107" y="124" font-family="ui-monospace,monospace" font-size="5.5" fill="#d4a853">breath</text>
+        <circle cx="100" cy="150" r="4" fill="#6b7c5e" class="sp5"/>
+        <text x="105" y="154" font-family="ui-monospace,monospace" font-size="5" fill="#6b7c5e">spine</text>
+        <circle cx="38" cy="148" r="5" fill="#8b4513" class="sp2"/>
+        <text x="8" y="146" font-family="ui-monospace,monospace" font-size="5.5" fill="#8b4513">elbow L</text>
+        <circle cx="162" cy="148" r="5" fill="#8b4513" class="sp2"/>
+        <text x="164" y="146" font-family="ui-monospace,monospace" font-size="5.5" fill="#8b4513">elbow R</text>
+        <circle cx="30" cy="178" r="5" fill="#d4a853" class="sp6"/>
+        <text x="2" y="190" font-family="ui-monospace,monospace" font-size="5.5" fill="#d4a853">wrist L</text>
+        <circle cx="170" cy="178" r="5" fill="#d4a853" class="sp6"/>
+        <text x="164" y="190" font-family="ui-monospace,monospace" font-size="5.5" fill="#d4a853">wrist R</text>
+        <circle cx="100" cy="195" r="5" fill="#6b7c5e" class="sp4"/>
+        <text x="105" y="199" font-family="ui-monospace,monospace" font-size="5.5" fill="#6b7c5e">sacrum</text>
+        <circle cx="74" cy="310" r="5" fill="#8b4513" class="sp3"/>
+        <text x="44" y="308" font-family="ui-monospace,monospace" font-size="5.5" fill="#8b4513">knee L</text>
+        <circle cx="126" cy="310" r="5" fill="#8b4513" class="sp3"/>
+        <text x="128" y="308" font-family="ui-monospace,monospace" font-size="5.5" fill="#8b4513">knee R</text>
+        <circle cx="70" cy="375" r="5" fill="#6b7c5e" class="sp5"/>
+        <text x="44" y="388" font-family="ui-monospace,monospace" font-size="5.5" fill="#6b7c5e">ankle L</text>
+        <circle cx="130" cy="375" r="5" fill="#6b7c5e" class="sp5"/>
+        <text x="128" y="388" font-family="ui-monospace,monospace" font-size="5.5" fill="#6b7c5e">ankle R</text>
+        <path d="M 170 178 Q 198 128 188 76" stroke="#d4a853" stroke-width="1" fill="none" class="tg"/>
+        <text x="184" y="72" font-family="Georgia,serif" font-size="7" fill="#d4a853" font-style="italic">trace</text>
+        <line x1="20" y1="396" x2="180" y2="396" stroke="#1a1612" stroke-width="0.7" opacity="0.22"/>
+      </svg>
+    </div>
+    <div class="anno-list">
+      <h3>Tier 2–4 · Sensor map · 14 points</h3>
+      <div class="ai"><div class="dot" style="background:#d4a853"></div><div><div class="lbl">Crown + Breath</div><div class="dsc">IMU at crown for head rotation and tilt. Pressure sensor at sternum for breath rhythm. Breath becomes spacing in the grammar. A cheek shift is enough.</div></div></div>
+      <div class="ai"><div class="dot" style="background:#8b4513"></div><div><div class="lbl">Shoulders / Elbows / Wrists — bilateral</div><div class="dsc">Six IMU sensors reading the full arm gesture field. Wrist arc becomes punctuation. Elbow extension becomes emphasis. Shoulder rotation marks a phrase boundary.</div></div></div>
+      <div class="ai"><div class="dot" style="background:#6b7c5e"></div><div><div class="lbl">Spine / Sacrum</div><div class="dsc">Mid-spine for upper body wave. Sacrum for the ground relation. Together they hold the body's vertical syntax. Seated bodies generate full language here.</div></div></div>
+      <div class="ai"><div class="dot" style="background:#8b4513"></div><div><div class="lbl">Knees / Ankles — bilateral</div><div class="dsc">Knee hesitation becomes ellipsis. Ankle trace holds the ground's memory of the step. A person who can only move one ankle is already speaking.</div></div></div>
+      <div class="ai"><div class="dot" style="background:#8b4513"></div><div><div class="lbl">Neck IMU</div><div class="dsc">The bamboo prosthetic neck, now sensor-augmented. Head turn, tilt, micro-rotation. The elder painting a flower — the neck leads the brush.</div></div></div>
+    </div>
+  </div>
+
+  <div class="flow-block">
+    <h3>Local Pattern Field — How the circles are carried</h3>
+    <div class="fs"><div class="fn">01</div><div><div class="ft">Sound or pulse enters</div><div class="fd">Whale song, drum, ambient field, or silence. Not a command. A question the body may or may not answer.</div></div></div>
+    <div class="fs"><div class="fn">02</div><div><div class="ft">Sensors read the body's answer</div><div class="fd">All active sensor points stream orientation, acceleration, and pressure locally. No cloud required at Tier 3. The data does not leave the room.</div></div></div>
+    <div class="fs"><div class="fn">03</div><div><div class="ft">The local pattern layer traces rhythm</div><div class="fd">A lightweight local model reads the joint-sequence stream and identifies grammatical structure: rotation (punctuation), breath-pause (spacing), velocity shift (emphasis), sustained hold (ellipsis), tremor (texture). It does not name what the movement means. It traces the structure of what was said.</div></div></div>
+    <div class="fs"><div class="fn">04</div><div><div class="ft">Translation into perceptible form</div><div class="fd">The pattern layer outputs a trace: light, sound response, field-change, or mark on a DesertRain surface. The wrist circle becomes a visible circle. The breath pause becomes silence in the output. Pain's ripple becomes a ripple in the field.</div></div></div>
+    <div class="fs"><div class="fn">05</div><div><div class="ft">The body receives the trace</div><div class="fd">The dancer, elder, or speaker feels seen by the system. Not judged. Not scored. Not assessed. The system said: I noticed that. The body heard: I was perceived.</div></div></div>
+    <div class="fs"><div class="fn">06</div><div><div class="ft">The trace belongs to the body</div><div class="fd">All output is held locally or released by the body's owner. The pattern layer retains no personal movement profile. The session ends. The trace was the session's.</div></div></div>
+  </div>
+
+  <div class="tier-strip">
+    <h3>Tier Spectrum — This build occupies Tier 2–4</h3>
+    <div class="tiers">
+      <div class="tier"><span class="tier-n">TIER 0</span><span class="tier-nm">A place to stand. Cloth. Shadow. Song.</span></div>
+      <div class="tier"><span class="tier-n">TIER 1</span><span class="tier-nm">Bamboo. Bells. Chalk. Seed rattles.</span></div>
+      <div class="tier hi"><span class="tier-n">TIER 2</span><span class="tier-nm">Low-cost sensors. LilyPad. Local sound.</span></div>
+      <div class="tier hi"><span class="tier-n">TIER 3</span><span class="tier-nm">Full garment. Joint mapping. Visible trace.</span></div>
+      <div class="tier hi"><span class="tier-n">TIER 4</span><span class="tier-nm">Local pattern field. Answerable to Tier 0.</span></div>
+    </div>
+  </div>
+
+  <div class="prot">
+    <p>The system does not interpret. It perceives and makes perceptible.</p>
+    <p>The pattern layer does not ask: did you do the right move? It asks: what did the sound call forth?</p>
+    <p>Tier 4 is answerable to Tier 0. The most resourced form must remain recognizable as the same thing as a line in the dust.</p>
+  </div>
+</section>
+
+<!-- PANEL 3: DESERTRAIN -->
+<section class="panel" id="tdr" role="tabpanel" aria-labelledby="tab-tdr" hidden>
+  <div class="schematic">
+    <div>
+      <svg class="body-figure" viewBox="0 0 200 440" fill="none">
+        <rect x="20" y="60" width="160" height="310" rx="2" stroke="#c8b89a" stroke-width="1" fill="rgba(212,168,83,0.04)"/>
+        <line x1="20" y1="100" x2="180" y2="100" stroke="#c8b89a" stroke-width="0.3" opacity="0.35"/>
+        <line x1="20" y1="145" x2="180" y2="145" stroke="#c8b89a" stroke-width="0.3" opacity="0.35"/>
+        <line x1="20" y1="190" x2="180" y2="190" stroke="#c8b89a" stroke-width="0.3" opacity="0.35"/>
+        <line x1="20" y1="235" x2="180" y2="235" stroke="#c8b89a" stroke-width="0.3" opacity="0.35"/>
+        <line x1="20" y1="280" x2="180" y2="280" stroke="#c8b89a" stroke-width="0.3" opacity="0.35"/>
+        <line x1="20" y1="325" x2="180" y2="325" stroke="#c8b89a" stroke-width="0.3" opacity="0.35"/>
+        <!-- wrist arc / flower -->
+        <path d="M 58 125 Q 46 105 60 90 Q 75 73 90 90 Q 102 107 87 123 Q 72 140 56 126" stroke="#d4a853" stroke-width="1.3" fill="none" opacity="0.6" stroke-dasharray="4 3"/>
+        <text x="94" y="108" font-family="Georgia,serif" font-size="7" fill="#d4a853" font-style="italic">wrist arc</text>
+        <!-- spine wave -->
+        <path d="M 100 158 Q 116 170 100 183 Q 84 197 100 210 Q 116 223 100 236" stroke="#8b4513" stroke-width="1" fill="none" opacity="0.5" stroke-dasharray="3 4"/>
+        <text x="118" y="198" font-family="Georgia,serif" font-size="7" fill="#8b4513" font-style="italic">spine wave</text>
+        <!-- breath spacing -->
+        <line x1="33" y1="258" x2="66" y2="258" stroke="#6b7c5e" stroke-width="1.8" opacity="0.6"/>
+        <line x1="77" y1="258" x2="98" y2="258" stroke="#6b7c5e" stroke-width="1.8" opacity="0.6"/>
+        <line x1="112" y1="258" x2="158" y2="258" stroke="#6b7c5e" stroke-width="1.8" opacity="0.6"/>
+        <text x="33" y="272" font-family="Georgia,serif" font-size="7" fill="#6b7c5e" font-style="italic">breath spacing</text>
+        <!-- hesitation ellipsis -->
+        <circle cx="48" cy="300" r="2.5" fill="#8b4513" opacity="0.5"/>
+        <circle cx="60" cy="300" r="2.5" fill="#8b4513" opacity="0.5"/>
+        <circle cx="72" cy="300" r="2.5" fill="#8b4513" opacity="0.5"/>
+        <text x="80" y="304" font-family="Georgia,serif" font-size="7" fill="#8b4513" font-style="italic">hesitation ···</text>
+        <!-- ripple over stone -->
+        <path d="M 35 345 Q 55 337 75 345 Q 95 353 115 345 Q 135 337 155 345" stroke="#d4a853" stroke-width="1" fill="none" opacity="0.55"/>
+        <text x="50" y="360" font-family="Georgia,serif" font-size="7" fill="#d4a853" font-style="italic">pain — ripple over stone</text>
+        <!-- surface label -->
+        <text x="100" y="48" font-family="ui-monospace,monospace" font-size="6" fill="#1a1612" text-anchor="middle" opacity="0.35" letter-spacing="2">DESERTRAIN · RECEIVING SURFACE</text>
+        <!-- incoming gesture -->
+        <text x="2" y="78" font-family="Georgia,serif" font-size="7" fill="#c8b89a" font-style="italic">gesture</text>
+        <text x="2" y="90" font-family="Georgia,serif" font-size="7" fill="#c8b89a" font-style="italic">enters</text>
+        <line x1="16" y1="83" x2="19" y2="83" stroke="#c8b89a" stroke-width="0.8"/>
+      </svg>
+    </div>
+    <div class="anno-list">
+      <h3>DesertRain · Receiving Surface</h3>
+      <div class="ai"><div class="dot" style="background:#d4a853"></div><div><div class="lbl">Wrist Arc — The Flower</div><div class="dsc">A wrist circle traced in air becomes a visible circle on the surface. The elder's flower lands. The mark remembers the gesture that made it.</div></div></div>
+      <div class="ai"><div class="dot" style="background:#8b4513"></div><div><div class="lbl">Spine Wave</div><div class="dsc">The wave traveling up the spine becomes a wave in the field. The dancer responding to whale song arrives as sinuous mark on the page.</div></div></div>
+      <div class="ai"><div class="dot" style="background:#6b7c5e"></div><div><div class="lbl">Breath Spacing</div><div class="dsc">Pause between breaths becomes gap between marks. The page breathes with the body. Silence is not absence — it is punctuation.</div></div></div>
+      <div class="ai"><div class="dot" style="background:#8b4513"></div><div><div class="lbl">Hesitation — Ellipsis</div><div class="dsc">The knee that slows, the shoulder that holds — three dots. Not failure. Grammatical pause. The body already knows this syntax.</div></div></div>
+      <div class="ai"><div class="dot" style="background:#d4a853"></div><div><div class="lbl">Ripple — Pain Over Stone</div><div class="dsc">Pain becomes the ripple over stone. Ecstasy — in motion, soft — becomes water over the selfsame stone. The surface holds the wave's shape without naming what made it.</div></div></div>
+    </div>
+  </div>
+
+  <div class="braid-block">
+    <h3>The Braid — Three surfaces, one grammar</h3>
+    <div class="bl2"><span class="btag">DesertRain</span><span>Where marks remember gesture. The page holds the motion of the hand that wrote it.</span></div>
+    <div class="bl2"><span class="btag">Translation Garment</span><span>Where gesture becomes mark. The body answers; the garment carries the answer into the visible world.</span></div>
+    <div class="bl2"><span class="btag">Embodied Language</span><span>The grammar they share. Rotation, breath, hesitation, ripple, wave, silence, arc.</span></div>
+  </div>
+
+  <div class="prot">
+    <p>DesertRain is not a dashboard. It is not analytics. It is not a record of performance.</p>
+    <p>It is a surface where the body's speech lands — and rests — without being judged.</p>
+    <p>The mark belongs to the body that made it. The surface holds no claim on what it received.</p>
+  </div>
+</section>
+</main>
+
+<footer>
+  <p>MythGear begins wherever a body can answer.</p>
+  <div class="footer-meta">
+    <p><a href="index.html">Return to MythWear Commons</a> · <a href="mythwear-license.html">License &amp; Stewardship</a></p>
+    <p>No Google Fonts · No analytics · No external scripts · No hosted assets.</p>
+    <p>Shared as part of the Fox’s Anvil / Flower Road ecosystem. CC BY-NC-SA 4.0 unless otherwise noted.</p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  const tabs = Array.from(document.querySelectorAll('[role="tab"]'));
+  const panels = Array.from(document.querySelectorAll('[role="tabpanel"]'));
+
+  function activateTab(tab) {
+    tabs.forEach((item) => {
+      const isActive = item === tab;
+      item.classList.toggle('active', isActive);
+      item.setAttribute('aria-selected', String(isActive));
+      item.tabIndex = isActive ? 0 : -1;
+    });
+
+    panels.forEach((panel) => {
+      const isActive = panel.id === tab.dataset.panel;
+      panel.classList.toggle('active', isActive);
+      panel.hidden = !isActive;
+    });
+  }
+
+  tabs.forEach((tab, index) => {
+    tab.tabIndex = tab.classList.contains('active') ? 0 : -1;
+
+    tab.addEventListener('click', () => activateTab(tab));
+
+    tab.addEventListener('keydown', (event) => {
+      const key = event.key;
+      if (!['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(key)) return;
+
+      event.preventDefault();
+
+      let nextIndex = index;
+      if (key === 'ArrowRight') nextIndex = (index + 1) % tabs.length;
+      if (key === 'ArrowLeft') nextIndex = (index - 1 + tabs.length) % tabs.length;
+      if (key === 'Home') nextIndex = 0;
+      if (key === 'End') nextIndex = tabs.length - 1;
+
+      tabs[nextIndex].focus();
+      activateTab(tabs[nextIndex]);
+    });
+  });
+})();
+</script>
+</body>
+</html>
