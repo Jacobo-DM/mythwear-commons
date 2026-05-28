@@ -144,6 +144,48 @@
       font-size: 1.08rem;
     }
 
+    .top-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.55rem;
+      margin-top: 1.4rem;
+    }
+
+    .top-nav a {
+      display: inline-flex;
+      align-items: center;
+      min-height: 2.35rem;
+      padding: 0.48rem 0.78rem;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(18, 20, 28, 0.72);
+      color: var(--muted);
+      font-family: var(--mono);
+      font-size: 0.78rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      transition:
+        color 0.2s ease,
+        border-color 0.2s ease,
+        background 0.2s ease,
+        transform 0.2s ease;
+    }
+
+    .top-nav a:hover,
+    .top-nav a:focus {
+      color: var(--gold);
+      border-color: rgba(255, 211, 107, 0.55);
+      background: rgba(255, 211, 107, 0.08);
+      text-decoration: none;
+      transform: translateY(-1px);
+    }
+
+    .top-nav a.guardrail-link {
+      color: var(--gold);
+      border-color: rgba(255, 211, 107, 0.38);
+      background: rgba(255, 211, 107, 0.08);
+    }
+
     main {
       padding-bottom: 2rem;
     }
@@ -192,6 +234,14 @@
         linear-gradient(180deg, rgba(255, 211, 107, 0.08), transparent 70%),
         var(--panel);
       border-color: var(--line-soft);
+    }
+
+    .card.guardrail {
+      background:
+        linear-gradient(180deg, rgba(255, 211, 107, 0.1), transparent 72%),
+        linear-gradient(135deg, rgba(185, 139, 93, 0.11), transparent 60%),
+        var(--panel);
+      border-color: rgba(255, 211, 107, 0.32);
     }
 
     .card h2 {
@@ -243,6 +293,17 @@
     .note p {
       margin: 0.4rem 0 0;
       color: var(--muted);
+    }
+
+    .note .law {
+      margin-top: 1rem;
+      padding: 0.9rem 1rem;
+      border-left: 3px solid var(--gold);
+      border-radius: 0 0.8rem 0.8rem 0;
+      background: rgba(255, 211, 107, 0.07);
+      color: var(--text);
+      font-family: var(--serif);
+      font-size: 1.05rem;
     }
 
     .pill-row {
@@ -301,6 +362,15 @@
         They are commons patterns: things to sew, adapt, repair, teach with, move in, and pass on.
       </p>
     </div>
+
+    <nav class="top-nav" aria-label="MythWear Commons navigation">
+      <a href="about.html">About</a>
+      <a href="patterns.html">Patterns</a>
+      <a href="mythgear-schematic.html">MythGear</a>
+      <a class="guardrail-link" href="root-notes/body-as-lantern.md">Body as Lantern</a>
+      <a href="flower-road-declaration.html">Declaration</a>
+      <a href="mythwear-license.html">License</a>
+    </nav>
   </header>
 
   <main id="main">
@@ -348,6 +418,17 @@
         </ul>
       </article>
 
+      <article class="card guardrail">
+        <h2>Body as Lantern</h2>
+        <p>
+          A MythWear / RacoonLight guardrail note on embodied discovery without
+          attention harvesting.
+        </p>
+        <ul>
+          <li><a href="root-notes/body-as-lantern.md">Read the root note</a></li>
+        </ul>
+      </article>
+
       <article class="card">
         <h2>License</h2>
         <p>
@@ -359,6 +440,20 @@
           <li><a href="trash/">Archive / drafts</a></li>
         </ul>
       </article>
+    </section>
+
+    <section class="note" aria-label="Body as Lantern root note">
+      <h2>Body as Lantern</h2>
+      <p>
+        A child’s movement may guide a field of discovery, but the child must never become
+        the object being measured.
+      </p>
+      <p class="law">
+        The body moves the field. The field does not move data about the body.
+      </p>
+      <p>
+        <a href="root-notes/body-as-lantern.md">Open the MythWear / RacoonLight guardrail note</a>
+      </p>
     </section>
 
     <section class="note" aria-label="Commons stewardship note">
